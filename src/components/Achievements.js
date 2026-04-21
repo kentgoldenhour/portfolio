@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import { FaTrophy, FaBook, FaGraduationCap, FaStar } from "react-icons/fa";
+import { FaTrophy } from "@react-icons/all-files/fa/FaTrophy";
+import { FaBook } from "@react-icons/all-files/fa/FaBook";
+import { FaGraduationCap } from "@react-icons/all-files/fa/FaGraduationCap";
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
+
 import Section from "./Section";
 import FadeInView from "./FadeInView";
 import { achievements } from "../data/content";

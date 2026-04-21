@@ -1,37 +1,21 @@
-import {
-  FaPython,
-  FaReact,
-  FaDocker,
-  FaGitAlt,
-  FaAws,
-  FaDatabase,
-  FaLinux,
-  FaHtml5,
-  FaCss3Alt,
-  FaNodeJs,
-  FaGithub,
-} from "react-icons/fa";
-import {
-  SiTensorflow,
-  SiPytorch,
-  SiScikitlearn,
-  SiJavascript,
-  SiTypescript,
-  SiTailwindcss,
-  SiMongodb,
-  SiPostgresql,
-  SiKeras,
-  SiOpencv,
-  SiPandas,
-  SiNumpy,
-  SiJupyter,
-  SiStreamlit,
-  SiFastapi,
-  SiFlask,
-  SiCplusplus,
-  SiCsharp,
-  SiC,
-} from "react-icons/si";
+import { FaPython } from "@react-icons/all-files/fa/FaPython";
+import { FaReact } from "@react-icons/all-files/fa/FaReact";
+import { FaDocker } from "@react-icons/all-files/fa/FaDocker";
+import { FaGitAlt } from "@react-icons/all-files/fa/FaGitAlt";
+import { FaDatabase } from "@react-icons/all-files/fa/FaDatabase";
+import { FaHtml5 } from "@react-icons/all-files/fa/FaHtml5";
+import { SiTensorflow } from "@react-icons/all-files/si/SiTensorflow";
+import { SiPytorch } from "@react-icons/all-files/si/SiPytorch";
+// import { SiScikitlearn } from "@react-icons/all-files/si/SiScikitlearn";
+import { SiJavascript } from "@react-icons/all-files/si/SiJavascript";
+import { SiTailwindcss } from "@react-icons/all-files/si/SiTailwindcss";
+import { SiKeras } from "@react-icons/all-files/si/SiKeras";
+// import { SiPandas } from "@react-icons/all-files/si/SiPandas";
+// import { SiNumpy } from "@react-icons/all-files/si/SiNumpy";
+import { SiJupyter } from "@react-icons/all-files/si/SiJupyter";
+// import { SiStreamlit } from "@react-icons/all-files/si/SiStreamlit";
+import { SiCplusplus } from "@react-icons/all-files/si/SiCplusplus";
+import { SiC } from "@react-icons/all-files/si/SiC";
 import { TbBrandCSharp } from "react-icons/tb";
 
 export const personalInfo = {
@@ -229,11 +213,11 @@ export const skills = {
   "ML / AI / Data": [
     { name: "TensorFlow", icon: SiTensorflow },
     { name: "PyTorch", icon: SiPytorch },
-    { name: "Scikit-learn", icon: SiScikitlearn },
+    // { name: "Scikit-learn", icon: SiScikitlearn },
     { name: "Keras", icon: SiKeras },
     // { name: "OpenCV", icon: SiOpencv },
-    { name: "Pandas", icon: SiPandas },
-    { name: "NumPy", icon: SiNumpy },
+    // { name: "Pandas", icon: SiPandas },
+    // { name: "NumPy", icon: SiNumpy },
   ],
   "Tools & Frameworks": [
     { name: "React", icon: FaReact },
@@ -243,7 +227,7 @@ export const skills = {
     { name: "Docker", icon: FaDocker },
     { name: "Git", icon: FaGitAlt },
     // { name: "AWS", icon: FaAws },
-    { name: "Streamlit", icon: SiStreamlit },
+    // { name: "Streamlit", icon: SiStreamlit },
     { name: "Tailwind CSS", icon: SiTailwindcss },
     // { name: "Linux", icon: FaLinux },
     // { name: "MongoDB", icon: SiMongodb },

@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
-import Section from "./Section";
 import { personalInfo } from "../data/content";
+import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaPaperPlane } from "@react-icons/all-files/fa/FaPaperPlane";
+
+import Section from "./Section";
 
 const Contact = ({ isDark }) => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });

@@ -19,7 +19,7 @@ const Skills = ({ isDark }) => {
                   key={skill.name}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ delay: i * 0.03 }}
                   whileHover={{ y: -3, scale: 1.02 }}
                   className={`relative rounded-xl p-4 text-center gradient-border transition-all duration-300 ${

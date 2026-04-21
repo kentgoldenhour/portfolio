@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaEnvelope } from "react-icons/fa";
 import { personalInfo } from "../data/content";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
+
 
 const greetings = [
   { prefix: "Hi, I'm ", name: personalInfo.name },
@@ -9,7 +11,6 @@ const greetings = [
   { prefix: "こんにちは、", name: personalInfo.name + " です" },
   { prefix: "Halo, saya ", name: personalInfo.name },
   { prefix: "Bonjour, je suis ", name: personalInfo.name },
-  { prefix: "Hola, soy ", name: personalInfo.name },
 ];
 
 const TypingText = ({ isDark }) => {
@@ -88,9 +89,9 @@ const Hero = ({ isDark }) => {
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/20 rounded-full blur-[128px] animate-glow-pulse" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-500/20 rounded-full blur-[128px] animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-[160px]" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-500/20 rounded-full blur-[64px] animate-glow-pulse" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent-500/20 rounded-full blur-[64px] animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[80px] bg-primary-600/10 rounded-full blur-[160px]" />
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center z-10">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "@react-icons/all-files/fa/FaChevronDown";
+import { FaChevronUp } from "@react-icons/all-files/fa/FaChevronUp";
 import Section from "./Section";
 import { experiences } from "../data/content";
 
