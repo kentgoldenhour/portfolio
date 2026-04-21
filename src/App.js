@@ -1,20 +1,15 @@
 import { useState, useCallback, lazy, Suspense } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Loader from "./components/Loader";
 
-// ===== Lazy Load (below the fold) =====
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
 const Skills = lazy(() => import("./components/Skills"));
 const Achievements = lazy(() => import("./components/Achievements"));
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
-// optional
-// const GithubActivity = lazy(() => import("./components/GithubActivity"));
-
-// ===== Above the fold (no lazy) =====
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Loader from "./components/Loader";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
