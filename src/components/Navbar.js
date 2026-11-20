@@ -26,6 +26,30 @@ const Navbar = ({ isDark, onThemeToggle }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Fungsi smooth scroll dengan offset tinggi navbar
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setMobileOpen(false);
+
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const targetId = href.replace("#", "");
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      const navbarOffset = 80; // Sesuaikan jarak agar judul section tidak tertutup navbar
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -44,6 +68,7 @@ const Navbar = ({ isDark, onThemeToggle }) => {
           {/* Logo */}
           <motion.a
             href="#"
+            onClick={(e) => handleNavClick(e, "#")}
             className="text-xl font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
@@ -56,6 +81,7 @@ const Navbar = ({ isDark, onThemeToggle }) => {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                   activeSection === link.href.replace("#", "")
                     ? isDark
@@ -135,7 +161,7 @@ const Navbar = ({ isDark, onThemeToggle }) => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isDark
                       ? "text-light-400 hover:text-white hover:bg-white/10"

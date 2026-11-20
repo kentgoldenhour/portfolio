@@ -4,186 +4,191 @@ import { personalInfo } from "../data/content";
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaPaperPlane } from "@react-icons/all-files/fa/FaPaperPlane";
+import { FaTelegramPlane } from "@react-icons/all-files/fa/FaTelegramPlane";
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
+import { FaCopy } from "@react-icons/all-files/fa/FaCopy";
+import { FaCheck } from "@react-icons/all-files/fa/FaCheck";
+import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt";
+import { SiTiktok } from "@react-icons/all-files/si/SiTiktok";
 
 import Section from "./Section";
 
 const Contact = ({ isDark }) => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleCopyEmail = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setForm({ name: "", email: "", message: "" });
+    navigator.clipboard.writeText(personalInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
-  const inputClass = `w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-300 ${
-    isDark
-      ? "bg-white/5 border border-white/10 text-white placeholder-light-400/50 focus:border-primary-500/50 focus:bg-white/10"
-      : "bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:border-primary-500/50 focus:bg-white"
-  }`;
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      handle: "Kent Alber Fredson",
+      description: "Professional network & career updates",
+      href: personalInfo.linkedin,
+      icon: FaLinkedin,
+    },
+    {
+      name: "GitHub",
+      handle: "@kentgoldenhour",
+      description: "Open-source repositories & ML projects",
+      href: personalInfo.github,
+      icon: FaGithub,
+    },
+    {
+      name: "Telegram",
+      handle: "@Liangisherexoxo", 
+      description: "Fastest way to reach me directly",
+      href: "https://t.me/Liangisherexoxo", 
+      icon: FaTelegramPlane,
+    },
+    {
+      name: "Instagram",
+      handle: "@kent.alberf", 
+      description: "Content creation, lifestyle & highlights",
+      href: "https://instagram.com/kent.alberf",
+      icon: FaInstagram,
+    },
+    {
+      name: "TikTok",
+      handle: "@kent.alberf",
+      description: "Lifestyle short videos",
+      href: "https://www.tiktok.com/@kent.alberf", 
+      icon: SiTiktok,
+    },
+  ];
 
   return (
     <Section
       id="contact"
       title="Get In Touch"
-      subtitle="Have a question or want to work together? Drop me a message!"
+      subtitle="Open for Data Science, AI Engineering, and collaboration opportunities. Feel free to reach out through any platform below!"
       isDark={isDark}
     >
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {/* Contact info */}
+      <div className="max-w-4xl mx-auto space-y-6">
+        {/* Highlight Email Card dengan Tombol Copy */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className={`rounded-2xl p-8 gradient-border ${
+          transition={{ duration: 0.5 }}
+          className={`rounded-2xl p-6 sm:p-8 gradient-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${
             isDark ? "glass" : "glass-light"
           }`}
         >
-          <h3
-            className={`text-xl font-semibold mb-6 ${
-              isDark ? "text-white" : "text-gray-900"
-            }`}
-          >
-            Let's Connect
-          </h3>
-          <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <div className="p-4 rounded-xl bg-primary-500/10 text-primary-400">
+              <FaEnvelope size={24} />
+            </div>
+            <div>
+              <p
+                className={`text-sm font-medium ${
+                  isDark ? "text-light-400" : "text-gray-500"
+                }`}
+              >
+                Direct Email
+              </p>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className={`text-base sm:text-lg font-semibold hover:text-primary-400 transition-colors ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                {personalInfo.email}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3 w-full sm:w-auto">
+            <button
+              onClick={handleCopyEmail}
+              className={`flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-all duration-300 ${
+                copied
+                  ? "bg-green-500 text-white"
+                  : isDark
+                  ? "bg-white/10 text-white hover:bg-white/15"
+                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+              }`}
+            >
+              {copied ? (
+                <>
+                  <FaCheck size={14} />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <FaCopy size={14} />
+                  Copy Email
+                </>
+              )}
+            </button>
+
             <a
               href={`mailto:${personalInfo.email}`}
-              className={`flex items-center gap-4 group ${
-                isDark ? "text-light-400" : "text-gray-600"
-              }`}
+              className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-primary-500 to-accent-500 text-white flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
             >
-              <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500/20 transition-colors">
-                <FaEnvelope size={20} />
-              </div>
-              <div>
-                <p className="text-sm font-medium">Email</p>
-                <p className="text-xs opacity-70">{personalInfo.email}</p>
-              </div>
-            </a>
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noreferrer"
-              className={`flex items-center gap-4 group ${
-                isDark ? "text-light-400" : "text-gray-600"
-              }`}
-            >
-              <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500/20 transition-colors">
-                <FaGithub size={20} />
-              </div>
-              <div>
-                <p className="text-sm font-medium">GitHub</p>
-                <p className="text-xs opacity-70">@kent-fredson1-SSGBION2</p>
-              </div>
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className={`flex items-center gap-4 group ${
-                isDark ? "text-light-400" : "text-gray-600"
-              }`}
-            >
-              <div className="p-3 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500/20 transition-colors">
-                <FaLinkedin size={20} />
-              </div>
-              <div>
-                <p className="text-sm font-medium">LinkedIn</p>
-                <p className="text-xs opacity-70">Kent Fredson</p>
-              </div>
+              Send Mail
             </a>
           </div>
         </motion.div>
 
-        {/* Contact form */}
-        <motion.form
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className={`rounded-2xl p-8 gradient-border ${
-            isDark ? "glass" : "glass-light"
-          }`}
-        >
-          <div className="space-y-4">
-            <div>
-              <label
-                className={`block text-sm font-medium mb-1.5 ${
-                  isDark ? "text-light-300" : "text-gray-700"
+        {/* Grid Kartu Sosial Media */}
+        <div className="grid sm:grid-cols-2 gap-4">
+          {socialLinks.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -4 }}
+                className={`rounded-2xl p-6 gradient-border group flex items-center justify-between transition-all duration-300 ${
+                  isDark ? "glass hover:bg-white/10" : "glass-light hover:bg-white"
                 }`}
               >
-                Name
-              </label>
-              <input
-                type="text"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                placeholder="Your name"
-                required
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label
-                className={`block text-sm font-medium mb-1.5 ${
-                  isDark ? "text-light-300" : "text-gray-700"
-                }`}
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="your@email.com"
-                required
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label
-                className={`block text-sm font-medium mb-1.5 ${
-                  isDark ? "text-light-300" : "text-gray-700"
-                }`}
-              >
-                Message
-              </label>
-              <textarea
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                placeholder="Your message..."
-                required
-                rows={4}
-                className={`${inputClass} resize-none`}
-              />
-            </div>
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className={`w-full py-3 rounded-xl font-medium flex items-center justify-center gap-2 transition-all duration-300 ${
-                submitted
-                  ? "bg-green-500 text-white"
-                  : "bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:shadow-lg hover:shadow-primary-500/25"
-              }`}
-            >
-              {submitted ? (
-                "Message Sent! ✓"
-              ) : (
-                <>
-                  <FaPaperPlane />
-                  Send Message
-                </>
-              )}
-            </motion.button>
-          </div>
-        </motion.form>
+                <div className="flex items-center gap-4">
+                  <div className="p-3.5 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300">
+                    <IconComponent size={22} />
+                  </div>
+                  <div>
+                    <h4
+                      className={`font-semibold text-base ${
+                        isDark ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {item.name}
+                    </h4>
+                    <p className="text-xs text-primary-400 font-medium mb-0.5">
+                      {item.handle}
+                    </p>
+                    <p
+                      className={`text-xs ${
+                        isDark ? "text-light-400/70" : "text-gray-500"
+                      }`}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+
+                <FaExternalLinkAlt
+                  size={14}
+                  className={`opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all ${
+                    isDark ? "text-white" : "text-gray-700"
+                  }`}
+                />
+              </motion.a>
+            );
+          })}
+        </div>
       </div>
     </Section>
   );

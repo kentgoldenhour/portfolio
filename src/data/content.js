@@ -36,78 +36,91 @@ export const personalInfo = {
     "Business Intelligence",
   ],
   email: "kentalberfredson@gmail.com",
-  github: "https://github.com/kent-fredson1-SSGBION2",
+  github: "https://github.com/kentgoldenhour",
   linkedin: "https://linkedin.com/in/kent-alber-fredson",
   location: "Jakarta, Indonesia",
 };
 
 export const projects = [
   {
+    title: "Zero-Shot Choir Voice Synthesis",
+    description:
+      "An end-to-end generative audio system for zero-shot multi-singer choir synthesis, integrating automatic SATB harmony generation, ECAPA-TDNN speaker embeddings, expressive pitch/style modeling, Latent Diffusion Transformers (DiT), and BigVGAN vocoding.",
+    techStack: ["Python", "PyTorch", "Diffusion Models", "ECAPA-TDNN", "BigVGAN", "Audio ML"],
+    // github: "#",
+    // demo: "#",
+    image: null,
+    featured: true,
+  },
+  {
+    title: "Offline Handwritten Chinese Calligraphy Digitization",
+    description:
+      "A computer vision web application comparing ResNet-18 and ConvNeXt-Tiny architectures trained on CASIA-HWDB1.0 to digitize handwritten Chinese calligraphy characters via image upload or live sketchpad input.",
+    techStack: ["Python", "PyTorch", "Torchvision", "ConvNeXt", "ResNet-18", "Gradio", "Hugging Face"],
+    // github: "#",
+    demo: "https://huggingface.co/spaces/duckieee/chinese-handwriting-recognition", 
+    image: null,
+    featured: true,
+  },
+  {
     title: "AI-Generated Text Detection",
     description:
-      "A hybrid deep learning system combining CNN architectures with linguistic feature extraction to detect AI-generated text. Achieves 96.5% accuracy on benchmark datasets using ensemble methods.",
-    techStack: ["Python", "TensorFlow", "NLP", "CNN", "Scikit-learn", "Flask"],
-    github: "https://github.com/kent-fredson1-SSGBION2/ai-text-detection",
-    demo: "#",
+      "A multi-input deep learning detector built with TensorFlow/Keras that fuses tokenized text sequences with 18 phonological, morphological, syntactic, and lexical linguistic features (via spaCy, NLTK, and pronouncing) to classify human vs. LLM-generated text.",
+    techStack: ["Python", "TensorFlow", "Keras", "spaCy", "NLTK", "Scikit-learn", "Gradio"],
+    github: "https://github.com/kentgoldenhour/robust-llm-detector",
+    demo: "https://huggingface.co/spaces/duckieee/llm_detector_improved_ai_catcher",
     image: null,
-    // featured: true,
+    featured: true,
   },
   {
-    title: "TRUST - Anti-Fraud Transaction System",
+    title: "Enterprise AI Tutoring Agent (RAG)",
     description:
-      "Real-time fraud detection platform using gradient boosting and anomaly detection algorithms. Processes 10K+ transactions/sec with <50ms latency and 99.2% precision.",
-    techStack: [
-      "Python",
-      "XGBoost",
-      "FastAPI",
-      "PostgreSQL",
-      "Docker",
-      "Redis",
-    ],
-    github: "https://github.com/kent-fredson1-SSGBION2/trust-antifraud",
-    demo: "#",
+      "An AI-powered academic tutoring agent built with Azure AI Foundry, implementing automated knowledge retrieval across 70+ course documents to deliver contextual support for over 13,600 university students.",
+    techStack: ["Azure AI Foundry", "RAG", "LLMs", "C#", "Azure Functions", "REST APIs"],
+    // github: "#",
+    // demo: "#",
     image: null,
-    // featured: true,
+    featured: false,
   },
   {
-    title: "Safety Helmet Detection System",
+    title: "Near-Real-Time Banking Fraud Data Streaming & Feature Validation",
     description:
-      "Computer vision pipeline for real-time safety helmet detection on construction sites using YOLOv8. Deployed on edge devices with optimized inference for 30+ FPS.",
-    techStack: ["Python", "PyTorch", "OpenCV", "YOLOv8", "Streamlit", "ONNX"],
-    github: "https://github.com/kent-fredson1-SSGBION2/helmet-detection",
-    demo: "#",
+      "Implemented near-real-time transaction data processing and automated feature validation using Confluent Kafka and Apache Flink across two major banking channels to standardize data quality checks for downstream fraud detection models.",
+    techStack: ["Python", "Apache Kafka", "Apache Flink", "SQL", "Feature Engineering"],
+    // github: "#",
+    // demo: "#",
     image: null,
-    // featured: true,
+    featured: false,
   },
   {
-    title: "NLP Sentiment Analyzer",
+    title: "Banking Fraud Analytics Dashboard",
     description:
-      "Multi-language sentiment analysis tool using transformer models (BERT, RoBERTa) with fine-tuning on domain-specific corpora. Supports 12 languages.",
-    techStack: ["Python", "Hugging Face", "PyTorch", "React", "FastAPI"],
-    github: "https://github.com/kent-fredson1-SSGBION2/sentiment-analyzer",
-    demo: "#",
+      "An interactive business intelligence and risk monitoring dashboard analyzing transaction anomalies, high-risk channel patterns, fraud rate trends, and suspicious user behavior metrics to support data-driven fraud mitigation.",
+    techStack: ["Power BI", "SQL", "Python", "Data Visualization", "Fraud Analytics"], // Sesuaikan tool BI jika pakai Looker Studio/Tableau
+    // github: "#",
+    demo: "https://app.powerbi.com/groups/me/reports/b9910673-c88b-4f1a-8e45-bcc4b01bfeba/25d92d2baa5d10200300?experience=power-bi", 
     image: null,
-    // featured: false,
+    featured: false,
   },
   {
-    title: "Data Pipeline Orchestrator",
+    title: "Big Five Personality Classification (DistilBERT vs. Bi-GRU)",
     description:
-      "Scalable ETL pipeline framework with automated data validation, transformation, and loading. Built with modular architecture supporting multiple data sources.",
-    techStack: ["Python", "Apache Airflow", "AWS", "PostgreSQL", "Docker"],
-    github: "https://github.com/kent-fredson1-SSGBION2/data-pipeline",
-    demo: "#",
+      "A multi-label psycholinguistic classification study comparing custom attention-augmented DistilBERT (with 1024-token windowing) and Bi-GRU models on the Essays-Big5 dataset, utilizing Optuna hyperparameter tuning and per-trait dynamic thresholding to achieve a 0.62 macro F1-score matching SOTA benchmarks.",
+    techStack: ["Python", "PyTorch", "Hugging Face Transformers", "DistilBERT", "Bi-GRU", "Optuna"],
+    // github: "",
+    // demo: "#",
     image: null,
-    // featured: false,
+    featured: true,
   },
   {
-    title: "Interactive ML Dashboard",
+    title: "Spotify Music & Streaming Analytics Dashboard",
     description:
-      "Real-time machine learning model monitoring dashboard with drift detection, performance metrics, and automated retraining triggers.",
-    techStack: ["React", "Python", "Streamlit", "Plotly", "MongoDB"],
-    github: "https://github.com/kent-fredson1-SSGBION2/ml-dashboard",
-    demo: "#",
+      "An exploratory data analytics dashboard uncovering listener engagement trends, track audio feature distributions (danceability, energy, tempo), top artist performance, and genre popularity insights.",
+    techStack: ["Power BI", "SQL", "Python", "Data Cleaning", "Exploratory Data Analysis"], // Sesuaikan tool BI jika pakai Looker Studio/Tableau
+    // github: "#",
+    demo: "https://datastudio.google.com/u/0/reporting/fe6c3dc5-8316-4e83-a171-92a5a348acc9/page/SMLDG", // Bisa diisi link publikasi Power BI / Looker Studio jika ada
     image: null,
-    // featured: false,
+    featured: false,
   },
 ];
 
@@ -115,12 +128,12 @@ export const experiences = [
   {
     role: "Programmer",
     company: "IT Division BINUS Online",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 – Aug 2026",
     type: "IT",
     description: [
-      "Developed and enhanced features for online examination and academic service systems to improve functionality and user experience",
-      "Resolved 10+ technical issues through debugging and optimization, contributing to system stability and performance",
-      "Explored AI agent technologies for future applications"
+      "Built an AI-powered tutoring agent using Azure AI Foundry, implementing automated knowledge retrieval to provide contextual course support across 70+ documents for 13600+ students.",
+      "Reduced critical API response times by 80% by refactoring inefficient SQL queries and optimizing backend processing, improving system performance during peak student traffic.",
+      "Resolved production issues across university web platforms by debugging application, API, and database failures, improving system reliability and reducing recurring operational issues.",
     ],
     techUsed: ["C#", "dotnet", "React", "Git"],
   },
@@ -130,10 +143,8 @@ export const experiences = [
     period: "Sept 2025 – Present",
     type: "Non-IT",
     description: [
-      "Led Mooncake Festival event, managing and coordinating a team of 30+ committee members",
-      "Secured 10+ sponsors and media partners for a Chinese New Year celebration event",
-      "Assisted in creating engaging content for promotional and education purposes across event platforms",
-      "Performed in a musical drama production"
+      "Secured and managed 20+ corporate sponsorships and cross-industry partnerships, coordinating stakeholder deliverables and supporting external funding initiatives.",
+      "Spearheaded the Mid-Autumn (Mooncake) Festival event as Project Manager, overseeing end-to-end event, execution, cross-division operations, and stakeholder coordination."
     ],
     techUsed: ["Excel", "Communication", "Public Speaking", "Content Creation", "Event Management", "Leadership", "Acting"],
   },
@@ -143,10 +154,9 @@ export const experiences = [
     period: "Feb 2025 – Aug 2025",
     type: "IT",
     description: [
-      "Explored how Redis can be implemented within a detection system.",
-      "Explored and applied Near Real-Time (NRT) modeling using Confluent Kafka and Flink for fraud detection using tabular banking data to 2 BCA channels.",
-      "Created 3 technical documentation detailing model architecture and data pipelines for internal use.",
-      "Designed 3 UI/UX mockups for dashboards to enhance user experience and functionality.",
+      "Built near-real-time transaction data pipelines using Confluent Kafka and Apache Flink to process fraud detection data across two major banking channels, enabling low-latency data delivery for downstream ML workflows.",
+      "Engineered automated preprocessing and feature validation pipelines for high-volume banking transactions, standardizing data quality checks and feature consistency for production fraud detection workflows.",
+      "Documented fraud detection model architecture, data flows, and governance processes to support knowledge transfer and operational consistency across stakeholders.",
     ],
     techUsed: ["Python", "Kafka", "Redis", "Docker", "Figma"],
   },
@@ -192,8 +202,9 @@ export const experiences = [
     period: "Mar 2023 – Feb 2024",
     type: "IT",
     description: [
-      "Updated and managed more than 2 documentation projects.",
-      "Developed a website (DevBees) over 3 sprints, including updating endpoints, creating a landing page, and adding various features & user access control.",
+      "Developed and maintained internal developer applications using Dart, Flutter, and C, contributing to software features and platform reliability.",
+      "Participated in cross-functional code reviews and engineering workshops covering .NET, Azure, Git, and software design patterns.",
+      "Created engineering documentation and onboarding guides that standardized development workflows across student developer teams.",
     ],
     techUsed: ["C#", "dotnet", "Dart", "Flutter", "Git"],
   }  
